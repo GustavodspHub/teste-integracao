@@ -22,7 +22,8 @@ OU
 ```bash
 yarn server:start
 ```
-OBS: A aplicação estará rodando em: http://localhost:3000
+OBS: 
+ - A aplicação estará rodando em: http://localhost:3000
 
 
 ## Funcionamento
@@ -35,7 +36,8 @@ Precisamos de 3 informações para efetuar uma requisição, são elas:
 
 Para realizar o teste, você pode usar ferramentes como [postman](https://www.postman.com/downloads/) ou [insominia](https://insomnia.rest/download)
 
-OBS: As informações devem ser passadas no Body da requisição, EX:
+OBS: 
+ - As informações devem ser passadas no Body da requisição, EX:
 ```bash
 {
     "googleApiKey": "*SUA_CHAVE_API_GOOGLE*",
@@ -80,7 +82,10 @@ Caso queira testar a validação de email, segue uma planilha com emails inváli
 - [planilhaTeste](https://docs.google.com/spreadsheets/d/1QNVDg6ZkDXeJNqfSJZPUnoMLrNdIvXkWun5GceWn4EI/edit#gid=0)
 
 
-OBS: Caso você crie sua própria planilha, deve seguir a sequência dos campos conforme foi dito anteriormente, e também deve deixar a planilha em modo público, para que a aplicação consiga ter acesso a ela.
+OBS: 
+ - Caso você crie sua própria planilha, deve seguir a mesma sequência dos campos conforme foi dito anteriormente.
+ - Você deve deixar a planilha em modo público, para que a aplicação consiga ter acesso a ela.
+ - Não será possível salvar o mesmo contator no HubSpot, caso tente, a aplicação irá retornar um erro.
 
 ## Token HubSpot
 
