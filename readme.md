@@ -49,9 +49,9 @@ Guia para a criação da chave api google: [GoogleApiKey](https://support.google
 ## ID planilha Google Sheets
 
 O ID da planilha pode ser encontrado na url da mesma. EX:
-```bash
+
 https://docs.google.com/spreadsheets/d/{ID_PLANILHA}/edit#gid=0
-```
+
 
 Para que o contato seja salvo corretamente, a planilha deve ter os seguintes campos:
 
