@@ -20,6 +20,8 @@ export class CreateContactsController implements Controller {
           return notFound('Não foi possível recuperar os contatos da planilha', error.message)
         case 'ERROR_CREATE_CONTACTS':
           return badRequest('Ops... Não foi possível salvar seus contatos', error.message)
+        case 'EMAIL_INVALID':
+          return badRequest('Ops... Algum email não é valdio')
         default:
           return serverError()
       }

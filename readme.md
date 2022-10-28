@@ -75,6 +75,10 @@ Caso você não deseje criar as panilhas, segue 3 para serem usadas como exemplo
 - [planilha2](https://docs.google.com/spreadsheets/d/18cERsZkVOienhlYrqcunleIddT73SWTzuUH8i_xRNCM/edit#gid=0)
 - [planilha3](https://docs.google.com/spreadsheets/d/1iMRJeDjX9LXCtw2Ys4h17wv8jryFCC1HfxHr06jjDqw/edit#gid=0)
 
+Caso queira testar a validação de email, segue uma planilha com emails inválidos:
+
+- [planilhaTeste](https://docs.google.com/spreadsheets/d/1QNVDg6ZkDXeJNqfSJZPUnoMLrNdIvXkWun5GceWn4EI/edit#gid=0)
+
 
 OBS: Caso você crie sua própria planilha, deve seguir a sequência dos campos conforme foi dito anteriormente, e também deve deixar a planilha em modo público, para que a aplicação consiga ter acesso a ela.
 

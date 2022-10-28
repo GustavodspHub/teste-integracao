@@ -22,21 +22,20 @@ export class HttpCreateContact implements CreateContacts {
       console.log(email)
       const isValid = this.emailValidotr.isValid(email)
       console.log(isValid)
-      if (isValid) {
-        const dataFormat = {
-          properties: {
-            firstname: names[0],
-            lastname: names[1],
-            email,
-            phone: sheets[i][2],
-            company: sheets[i][3],
-            website: sheets[i][4]
-          }
+      if (!isValid) throw new Error('EMAIL_INVALID')
+      const dataFormat = {
+        properties: {
+          firstname: names[0],
+          lastname: names[1],
+          email,
+          phone: sheets[i][2],
+          company: sheets[i][3],
+          website: sheets[i][4]
         }
-        console.log(dataFormat)
-        const result = await this.createContactService.post(dataFormat, hubSpotToken)
-        if (!result) throw new Error('ERROR_CREATE_CONTACTS')
       }
+      console.log(dataFormat)
+      const result = await this.createContactService.post(dataFormat, hubSpotToken)
+      if (!result) throw new Error('ERROR_CREATE_CONTACTS')
     }
   }
 }
