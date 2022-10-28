@@ -9,8 +9,8 @@ export class HttpCreateContact implements CreateContacts {
     private readonly emailValidotr: EmailValidator
   ) {}
 
-  async create (sheetId: string): Promise<Result> {
-    const sheets = await this.getConstactsService.get(sheetId)
+  async create (sheetId: string, authenticationKey: string, hubSpotToken: string): Promise<Result> {
+    const sheets = await this.getConstactsService.get(sheetId, authenticationKey)
 
     if (!sheets) throw new Error('ERROR_GET_CONTACTS')
 
@@ -34,7 +34,7 @@ export class HttpCreateContact implements CreateContacts {
           }
         }
         console.log(dataFormat)
-        const result = await this.createContactService.post(dataFormat)
+        const result = await this.createContactService.post(dataFormat, hubSpotToken)
         if (!result) throw new Error('ERROR_CREATE_CONTACTS')
       }
     }
