@@ -10,12 +10,16 @@ export class CreateContactsController implements Controller {
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const { sheetId, googleApiKey, hubSpotToken } = httpRequest.body
+
+      if (!sheetId || !googleApiKey || !hubSpotToken) throw new Error('INVALID_FIELDS')
+
       await this.createContacts.create(sheetId, googleApiKey, hubSpotToken)
 
       return ok('Contatos salvo na plataforma HubSpot!')
     } catch (error) {
-      console.log(error)
       switch (error.message) {
+        case 'INVALID_FIELDS':
+          return badRequest('Ops... Parece que você está esquecendo de preencer algum campo.', error.message)
         case 'ERROR_GET_CONTACTS':
           return notFound('Não foi possível recuperar os contatos da planilha', error.message)
         case 'ERROR_CREATE_CONTACTS':

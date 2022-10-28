@@ -14,7 +14,7 @@ export class HttpCreateContact implements CreateContacts {
 
     if (!getSheet) throw new Error('ERROR_GET_CONTACTS')
 
-    for (let i = 0; i < getSheet?.length; i++) {
+    for (let i = 1; i < getSheet?.length; i++) {
       if (!Array.isArray(getSheet)) throw new Error('INVALID_ARRAY')
 
       const names = getSheet[i][0].split(' ')
