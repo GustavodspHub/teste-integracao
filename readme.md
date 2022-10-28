@@ -6,13 +6,17 @@ Essa aplicação foi criada com o intuito de salvar contatos das planilhas do Go
 
 Para instalar os pacotes do projeto, utilize o seguinte comando na pasta raiz:
 ```bash
-npm install OU yarn
+npm install
+```
+OU
+```bash
+yarn
 ```
 
 ## Inicialização
 Para inicar o projeto, na pasta raiz, utilizar o comando:
 ```bash
-npm run server:start  yarn server:start
+npm run server:start
 ```
 OU
 ```bash
@@ -22,7 +26,7 @@ OBS: A aplicação estará rodando em: http://localhost:3000
 
 
 ## Funcionamento
-Precisamos informas 3 informações para efetuar uma requisição, são elas:
+Precisamos de 3 informações para efetuar uma requisição, são elas:
 
  - Chave api googleapis;
  - ID planilha GoogleSheets;
@@ -39,6 +43,10 @@ OBS: As informações devem ser passadas no Body da requisição, EX:
     "hubSpotToken": "TOKEN_PLATAFORMA_HUBSPOT"
 }
 ```
+
+## Endpoint 
+
+Para realizar a requisição no lugar correto, complete a URL com /api/contacts
 
 ## Como conseguir as informações necessárias para efetuar a requisição?
 
