@@ -1,3 +1,4 @@
 import app from './config/app'
+import { SERVER } from '../utils/constants'
 
-app.listen(3000, () => console.log('Server running at http://localhost:3000'))
+app.listen(SERVER.PORT, () => console.log(`Server running at http://localhost:${SERVER.PORT}`))

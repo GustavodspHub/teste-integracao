@@ -29,10 +29,10 @@ export const serverError = () => {
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const badRequest = (error?: any) => ({
+export const badRequest = (message: any, error?: any) => ({
   statusCode: 400,
   body: {
-    message: 'Ops, ocorreram alguns erros de validações',
+    message,
     payload: {},
     error
   }

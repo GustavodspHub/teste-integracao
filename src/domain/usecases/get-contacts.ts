@@ -1,3 +1,3 @@
 export interface CreateContacts {
-  create: () => any
+  create: (sheetId: string) => any
 }
