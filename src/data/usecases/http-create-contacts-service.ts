@@ -1,6 +1,6 @@
 import { CreateContactsService, Result, GetConstactsService } from '../protocols/http'
 import { CreateContacts } from '../../domain/usecases'
-import { EmailValidator } from '../protocols/adapters';
+import { EmailValidator } from '../protocols/adapters'
 
 export class HttpCreateContact implements CreateContacts {
   constructor (

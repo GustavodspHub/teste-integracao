@@ -18,13 +18,12 @@ export const created = (message: string, payload?: object) => ({
 })
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const serverError = (error: any) => {
+export const serverError = () => {
   return {
     statusCode: 500,
     body: {
       message: 'Ops, parece que ocorreu um erro dentro dos nossos servidores',
-      payload: {},
-      error
+      payload: {}
     }
   }
 }

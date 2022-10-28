@@ -1,5 +1,5 @@
-export interface GetSheetsService {
+export interface GetConstactsService {
   get: () => Result
 }
 
-export type Result = Promise<any>
+type Result = Promise<any>

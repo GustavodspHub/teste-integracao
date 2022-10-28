@@ -1,22 +1,19 @@
 import {
   CreateContactsService as CreateContactsServiceProtocol,
-  HttpClient,
-  Params
+  HttpClient
 } from '../../../../data/protocols/http'
-import { TOKEN, ID } from '../../../../utils'
+import { TOKEN } from '../../../../utils'
 
 export class CreateContactService implements CreateContactsServiceProtocol {
   constructor (private readonly httpClient: HttpClient) {}
 
-  async post (params: Params): Promise<any> {
+  async post (params): Promise<any> {
     const response = await this.httpClient.request({
       method: 'POST',
-      url: `/contacts/v1/lists/${ID.SHEET_ID}/add`,
+      url: '/crm/v3/objects/contacts',
+      body: params,
       headers: {
         Authorization: `Bearer ${TOKEN.ACCESS_TOKEN_HUBSPOT}`
-      },
-      body: {
-        inputs: params
       }
     })
     if (response.statusCode > 300 || !response.body) return null

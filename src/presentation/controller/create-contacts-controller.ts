@@ -1,6 +1,6 @@
 import { CreateContacts } from '../../domain/usecases'
 import { HttpResponse, HttpRequest, Controller } from '../protocols'
-import { badRequest, serverError, ok } from '../utils'
+import { serverError, ok } from '../utils'
 
 export class SignUpController implements Controller {
   constructor (
@@ -11,7 +11,7 @@ export class SignUpController implements Controller {
     try {
       const createContacts = await this.createContacts.create()
 
-      return ok(createContacts)
+      return ok('Contatos salvo na plataforma HubSpot!', createContacts)
     } catch (error) {
       return serverError()
     }
