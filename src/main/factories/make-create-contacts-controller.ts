@@ -8,12 +8,16 @@ import { EmailValidatorAdapter } from '../../utils/email-validator-adapter'
 export const makeCrateContactsController = (): CreateContactsController => {
   const requestAdapterGoogleSheet = new RequestAdapter(HttpGoogleSheet)
   const requestAdapterHubSpot = new RequestAdapter(HttpHubSpot)
+
   const getContactsService = new GetContactsService(requestAdapterGoogleSheet)
   const createContactService = new CreateContactService(requestAdapterHubSpot)
+
   const emailValidatorAdapter = new EmailValidatorAdapter()
+
   const httpCreateContact = new HttpCreateContact(
     getContactsService,
     createContactService,
     emailValidatorAdapter)
+
   return new CreateContactsController(httpCreateContact)
 }

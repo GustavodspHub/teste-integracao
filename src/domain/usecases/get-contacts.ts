@@ -1,3 +1,3 @@
 export interface CreateContacts {
-  create: (sheetId: string, authenticationKey: string, hubSpotToken: string) => any
+  create: (sheetId: string, googleApiKey: string, hubSpotToken: string) => any
 }

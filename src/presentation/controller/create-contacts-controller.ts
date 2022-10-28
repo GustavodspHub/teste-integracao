@@ -9,8 +9,8 @@ export class CreateContactsController implements Controller {
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
-      const { sheetId, authenticationKey, hubSpotToken } = httpRequest.body
-      await this.createContacts.create(sheetId, authenticationKey, hubSpotToken)
+      const { sheetId, googleApiKey, hubSpotToken } = httpRequest.body
+      await this.createContacts.create(sheetId, googleApiKey, hubSpotToken)
 
       return ok('Contatos salvo na plataforma HubSpot!')
     } catch (error) {
